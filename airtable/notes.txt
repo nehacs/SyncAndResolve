@@ -1,0 +1,10 @@
+Notes:
+1. Would like to implement deeper comparison methods on everything -- does not exist currently.
+
+Conflict resolution strategies:
+For Move -- The strategy is to apply changes from the clients one by one. Basically try to keep track
+of what the client's original intent was and re-apply that to the server. 
+
+For syncing data back to client -- I am currenlty copying the entire data again. Better way to do this
+is to keep track of changes since last time the client was online (use UUIDs for the clients for this)
+and only sync back those changes using the same SyncAndResolve strategy.
